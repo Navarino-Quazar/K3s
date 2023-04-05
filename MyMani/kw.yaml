@@ -9,12 +9,12 @@ write_files:
     content: |-
       [service_eth0]
       Type=ethernet
-      IPv4=192.168.202.4/255.255.255.0/192.168.202.2
+      IPv4=192.168.201.4/255.255.255.0/192.168.201.2
       IPv6=off
       Nameservers=1.1.1.1
 
 k3os:
-  server_url: https://192.168.202.3:6443
+  server_url: https://192.168.201.3:6443
   token: myclustersecret
   dns_nameservers:
     - 1.1.1.1
