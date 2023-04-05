@@ -12,7 +12,7 @@ write_files:
       IPv4=192.168.10.104/255.255.255.0/192.168.10.1
       IPv6=off
       Nameservers=192.168.10.1
- k3os:
+k3os:
   server_url: https://192.168.10.103:6443
   token: myclustersecret
   dns_nameservers:
