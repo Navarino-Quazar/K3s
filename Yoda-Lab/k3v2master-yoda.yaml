@@ -1,0 +1,25 @@
+hostname: k3v2master-yoda
+ssh_authorized_keys:
+- ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1qmKLBxKwo4HXdhnyMnmR/MUttKhtZ8Aj7Y059YUUlnWB/gQYFKoUrivjkh/ABPWZYmqBPfqfAibFzlHCYFJLF+jgi5cviF+nvAwXFdLgtvcQgPnvCardDi1cuObduZ2e8V41mDV/rP1CE51+jlPa28IeYwE2rTVwL/myEmqxk2hHSJ5sGfkyUaIFCrWOQPHIDRGokeP1WK4elbpOKj2kPbdA9wSt/kqEnAW4kDgZIU5MfFb+It28mJgsQxoTv9Tmsc5qS/NFZEgrrA/5DnUbKu3DCfnbqXxDzeSf7JuUhryEKwtNmZqv3z+WZb26MfgaAVYjih03Hycfmqxsg/fj
+- ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCuTqeHmkPJS3zq8qlRz7JRoGTSBro32Xm84cRGs+xbA309Dfm2I8L3+wiKzGdAiYWD6wL4d1jobEGl24XD0N3K9lQUmQacP4B2uVznhPWZ7WlTWJ/fPVswwmJX2Ab/ev7uoV4OtjckFnwgIrjNqY4rC716T6ADkLHOh4TDUrMBsYmLLkaoK8Q5WM+uOY6Sw/lAkVQPH+PPwRP2Bmb7QN++Wfo7cNwcYVOGvMgph+MiKX9Rvb9UNUO9icKgGy5D9I6/0t+FjMpY+txrrJw5Eq6C2kIhg2X5vCxm3zZA+B1hwK1xyaCuW3QZaaw3gUYsnXBRM7tvXwy7xzF5+yj9c2jLRaU/nAnHblL7wqhJyIig5hm+NWNKfel7ME1DOUSQD8qkaoFzHNSH/QEWfXsY3IjDm0RZjd/CobCCFTT/kOCKkdA3sM124FMKR1OcwNspcXPG+fHUxwNxbZY4x2r6/VUARZNBl7apiHkLLy79pYvSYDhz8/89a6U2Ktp7GGH+QTM= ckoutsouradis@84NW2Z2
+- ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAUQosoTrmCOkBdCru4MUwr2IX6LAuHSDkmJK9DofNZe ZeT
+
+write_files:
+  - path: /var/lib/connman/default.config
+    content: |-
+      [service_eth0]
+      Type=ethernet
+      IPv4=192.168.10.103/255.255.255.0/192.168.10.1
+      IPv6=off
+      Nameservers=192.168.10.1
+k3os:
+  dns_nameservers:
+  - 192.168.10.1
+  ntp_servers:
+  - 192.168.10.1
+  password: Digital123!
+  token: myclustersecret
+  k3s_args:
+  - server
+  - "--write-kubeconfig-mode"
+  - "644"
