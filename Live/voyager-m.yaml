@@ -11,13 +11,15 @@ write_files:
       Type=ethernet
       IPv4=192.168.20.189/255.255.255.0/192.168.20.1
       IPv6=off
-      Nameservers=192.168.10.1
-
+      Nameservers=192.168.20.1
 k3os:
-  server_url: https://192.168.10.3:6443
-  token: myclustersecret
   dns_nameservers:
     - 192.168.20.1
   ntp_servers:
     - 192.168.20.1
   password: Digital123!
+  token: myclustersecret
+  k3s_args:
+    - server
+    - '--write-kubeconfig-mode'
+    - '644'
