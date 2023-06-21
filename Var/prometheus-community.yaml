@@ -1,0 +1,50 @@
+apiVersion: catalog.cattle.io/v1
+kind: ClusterRepo
+metadata:
+  creationTimestamp: '2023-06-14T07:54:37Z'
+  generation: 1
+  managedFields:
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:clientSecret: {}
+          f:url: {}
+      manager: agent
+      operation: Update
+      time: '2023-06-14T07:54:37Z'
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:conditions: {}
+          f:downloadTime: {}
+          f:indexConfigMapName: {}
+          f:indexConfigMapNamespace: {}
+          f:observedGeneration: {}
+          f:url: {}
+      manager: agent
+      operation: Update
+      subresource: status
+      time: '2023-06-16T09:01:23Z'
+  name: prometheus-community
+  resourceVersion: '248653'
+  uid: 68283452-d72b-4a77-8b90-fbc60ea674e3
+spec:
+  clientSecret: null
+  url: https://prometheus-community.github.io/helm-charts
+status:
+  conditions:
+    - lastUpdateTime: '2023-06-14T07:54:37Z'
+      status: 'True'
+      type: FollowerDownloaded
+    - lastUpdateTime: '2023-06-16T09:01:23Z'
+      status: 'True'
+      type: Downloaded
+  downloadTime: '2023-06-16T09:01:23Z'
+  indexConfigMapName: prometheus-community-0-68283452-d72b-4a77-8b90-fbc60ea674e3
+  indexConfigMapNamespace: cattle-system
+  observedGeneration: 1
+  url: https://prometheus-community.github.io/helm-charts
